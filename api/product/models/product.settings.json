@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "costprice": {
+      "type": "decimal",
+      "required": true
+    },
+    "sellingprice": {
+      "type": "decimal",
+      "required": true
+    },
+    "stock": {
+      "type": "integer",
+      "required": true
+    },
+    "tags": {
+      "type": "text",
+      "default": "#product #shopping #order"
+    },
+    "categories": {
+      "via": "products",
+      "collection": "category"
+    }
+  }
+}
